@@ -1,0 +1,16 @@
+package by.flameksandr.regexp;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Starter {
+    public static void main(String[] args) {
+
+        Pattern pattern = Pattern.compile("[a-z]+");
+        Matcher matcher1 = pattern.matcher("1 2 d k D L 3 6 ) & l c ,");
+        System.out.println(matcher1.find());
+
+        Matcher matcher2 = pattern.matcher("1 2 D L 3 6 ) & ,");
+        System.out.println(matcher2.find());
+    }
+}
