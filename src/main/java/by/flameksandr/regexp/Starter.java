@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 public class Starter {
     public static void main(String[] args) {
         int counter = 0;
-        String macAddressString = "77:a3:d2:01:ff:63";
+        String macAddressString = "aleksandr@gmail.com";
 
-        Pattern pattern = Pattern.compile("^(((\\p{XDigit}{2})([:-]|$)){6})$");
+        Pattern pattern = Pattern.compile("^((\\w|[+-])+(\\.[\\w-]+)*@[\\w-]+((\\.[\\d\\p{Alpha}]+)*(\\.\\p{Alpha}{2,})*)*)$");
 
         Matcher matcher = pattern.matcher(macAddressString);
 
