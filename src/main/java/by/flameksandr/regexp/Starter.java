@@ -12,5 +12,9 @@ public class Starter {
 
         Matcher matcher2 = pattern.matcher("1 2 D L 3 6 ) & ,");
         System.out.println(matcher2.find());
+
+        Pattern pattern2 = Pattern.compile("[a-zA-Z0-9]");
+        Matcher matcher3 = pattern2.matcher("A B 3 56 L");
+        System.out.println(matcher3.find());
     }
 }
