@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Starter {
     public static void main(String[] args) {
 
-        String cardNumber = "2234 5678 9658 4521";
+        String cardNumber = "2234567896584521";
         String date = "12/12";
         String cvv = "569";
 
