@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Starter {
     public static void main(String[] args) {
 
-        Pattern pattern = Pattern.compile("(\\d+)");
+        Pattern pattern = Pattern.compile("(\\d+).*\\1");
         Matcher matcher = pattern.matcher("2016 year. 2017 year. 2018 year");
 
         while (matcher.find()){
