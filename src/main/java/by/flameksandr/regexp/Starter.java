@@ -72,5 +72,18 @@ public class Starter {
         Matcher matcher92 = pattern9.matcher("16");
         System.out.println(matcher92.find());
 
+
+        System.out.println("-----------10---------------");
+// \s - поиск пробельного символа
+        Pattern pattern10 = Pattern.compile("\\s");
+        Matcher matcher10 = pattern10.matcher("1 2 3 K D A g");
+        System.out.println(matcher10.find());
+
+        Matcher matcher101 = pattern10.matcher("N Y K");
+        System.out.println(matcher101.find());
+
+        Matcher matcher102 = pattern10.matcher("16");
+        System.out.println(matcher102.find());
+
     }
 }
