@@ -60,5 +60,17 @@ public class Starter {
         Matcher matcher72 = pattern7.matcher("1 h N");
         System.out.println(matcher72.find());
 
+        System.out.println("-----------9---------------");
+// \D - поиск не цифры
+        Pattern pattern9 = Pattern.compile("\\D");
+        Matcher matcher9 = pattern9.matcher("1 2 3 K D A g");
+        System.out.println(matcher9.find());
+
+        Matcher matcher91 = pattern9.matcher("N Y K");
+        System.out.println(matcher91.find());
+
+        Matcher matcher92 = pattern9.matcher("16");
+        System.out.println(matcher92.find());
+
     }
 }
