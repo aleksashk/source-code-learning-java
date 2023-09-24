@@ -47,5 +47,18 @@ public class Starter {
         Matcher matcher62 = pattern6.matcher("1 h N");
         System.out.println(matcher62.find());
 
+
+        System.out.println("-----------7---------------");
+// | - "или", тоесть поиск в альтернативной реализации регулярного выражения
+        Pattern pattern7 = Pattern.compile(".[a-z]|.[0-9]");
+        Matcher matcher7 = pattern7.matcher("1 2 3 K D A g");
+        System.out.println(matcher7.find());
+
+        Matcher matcher71 = pattern7.matcher("N Y K");
+        System.out.println(matcher71.find());
+
+        Matcher matcher72 = pattern7.matcher("1 h N");
+        System.out.println(matcher72.find());
+
     }
 }
