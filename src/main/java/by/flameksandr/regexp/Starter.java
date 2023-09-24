@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 public class Starter {
     public static void main(String[] args) {
 
-        String phoneNumber = "375017456-8712";
-        Pattern pattern = Pattern.compile("^((\\+?375)(\\d{10}))$");
+        String phoneNumber = "3750174568712";
+        Pattern pattern = Pattern.compile("^((\\+?375)(\\p{Digit}{10}))$");
         Matcher matcher = pattern.matcher(phoneNumber);
         if(matcher.find()){
             System.out.println("PhoneNumber '" + phoneNumber + "' is correct!");
