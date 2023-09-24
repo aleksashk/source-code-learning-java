@@ -74,7 +74,7 @@ public class Starter {
 
 
         System.out.println("-----------10---------------");
-// \s - поиск пробельного символа
+// \s - поиск пробельного символа либо [\\f\\n\\t\\r\\v]
         Pattern pattern10 = Pattern.compile("\\s");
         Matcher matcher10 = pattern10.matcher("1 2 3 K D A g");
         System.out.println(matcher10.find());
