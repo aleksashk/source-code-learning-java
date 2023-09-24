@@ -35,5 +35,17 @@ public class Starter {
         Matcher matcher51 = pattern5.matcher("a d s k l e 1");
         System.out.println(matcher51.find());
 
+        System.out.println("-----------6---------------");
+// . - любое совпадение с заданным символом
+        Pattern pattern6 = Pattern.compile(".[a-z]");
+        Matcher matcher6 = pattern6.matcher("1 2 3 K D A g");
+        System.out.println(matcher6.find());
+
+        Matcher matcher61 = pattern6.matcher("1 2 N");
+        System.out.println(matcher61.find());
+
+        Matcher matcher62 = pattern6.matcher("1 h N");
+        System.out.println(matcher62.find());
+
     }
 }
