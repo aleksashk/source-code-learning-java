@@ -16,5 +16,15 @@ public class Starter {
         Pattern pattern2 = Pattern.compile("[a-zA-Z0-9]");
         Matcher matcher3 = pattern2.matcher("A B 3 56 L");
         System.out.println(matcher3.find());
+
+        System.out.println("-----------4---------------");
+
+        Pattern pattern4 = Pattern.compile("^[a-z]");
+        Matcher matcher4 = pattern4.matcher("1 2 3 K D A");
+        System.out.println(matcher4.find());
+
+        Matcher matcher41 = pattern4.matcher("a d s k l e ");
+        System.out.println(matcher41.find());
+
     }
 }
