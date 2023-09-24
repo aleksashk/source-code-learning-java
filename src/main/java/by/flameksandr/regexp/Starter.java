@@ -49,7 +49,7 @@ public class Starter {
 
 
         System.out.println("-----------7---------------");
-// \d - поиск цифры
+// \d - поиск цифры можно заменить на [0-9]
         Pattern pattern7 = Pattern.compile("\\d");
         Matcher matcher7 = pattern7.matcher("1 2 3 K D A g");
         System.out.println(matcher7.find());
