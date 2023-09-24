@@ -49,8 +49,8 @@ public class Starter {
 
 
         System.out.println("-----------7---------------");
-// | - "или", тоесть поиск в альтернативной реализации регулярного выражения
-        Pattern pattern7 = Pattern.compile(".[a-z]|.[0-9]");
+// \d - поиск цифры
+        Pattern pattern7 = Pattern.compile("\\d");
         Matcher matcher7 = pattern7.matcher("1 2 3 K D A g");
         System.out.println(matcher7.find());
 
