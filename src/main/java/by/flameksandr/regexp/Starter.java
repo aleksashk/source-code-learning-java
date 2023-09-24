@@ -74,15 +74,15 @@ public class Starter {
 
 
         System.out.println("-----------10---------------");
-// \s - поиск пробельного символа либо [\\f\\n\\t\\r\\v]
-        Pattern pattern10 = Pattern.compile("\\s");
+// \S - поиск непробельного символа либо [^ \\f\\n\\t\\r\\v]
+        Pattern pattern10 = Pattern.compile("\\S");
         Matcher matcher10 = pattern10.matcher("1 2 3 K D A g");
         System.out.println(matcher10.find());
 
         Matcher matcher101 = pattern10.matcher("N Y K");
         System.out.println(matcher101.find());
 
-        Matcher matcher102 = pattern10.matcher("16");
+        Matcher matcher102 = pattern10.matcher(" ");
         System.out.println(matcher102.find());
 
     }
