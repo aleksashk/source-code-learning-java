@@ -8,7 +8,7 @@ public class Starter {
         int counter = 0;
         String macAddressString = "77:a3:d2:01:ff:63";
 
-        Pattern pattern = Pattern.compile("^(((\\p{XDigit}{2})[:-]){5}\\p{XDigit}{2})$");
+        Pattern pattern = Pattern.compile("^(((\\p{XDigit}{2})([:-]|$)){6})$");
 
         Matcher matcher = pattern.matcher(macAddressString);
 
