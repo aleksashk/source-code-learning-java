@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 public class Starter {
     public static void main(String[] args) {
 
-        String cardNumber = "1234 5678 9658 4521";
-        String date = "12/452";
+        String cardNumber = "2234 5678 9658 4521";
+        String date = "12/12";
         String cvv = "569";
 
         Pattern cardNumberPattern = Pattern.compile("([2-6]([0-9]{3}) ?)(([0-9]{4} ?){3})");
