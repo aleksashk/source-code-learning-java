@@ -18,7 +18,7 @@ public class Starter {
         System.out.println(matcher3.find());
 
         System.out.println("-----------4---------------");
-
+// ^ - поиск в начале строки
         Pattern pattern4 = Pattern.compile("^[a-z]");
         Matcher matcher4 = pattern4.matcher("1 2 3 K D A");
         System.out.println(matcher4.find());
