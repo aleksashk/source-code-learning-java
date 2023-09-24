@@ -26,5 +26,14 @@ public class Starter {
         Matcher matcher41 = pattern4.matcher("a d s k l e ");
         System.out.println(matcher41.find());
 
+        System.out.println("-----------5---------------");
+// $ - поиск в конце строки
+        Pattern pattern5 = Pattern.compile("[a-z]$");
+        Matcher matcher5 = pattern5.matcher("1 2 3 K D A g");
+        System.out.println(matcher5.find());
+
+        Matcher matcher51 = pattern5.matcher("a d s k l e 1");
+        System.out.println(matcher51.find());
+
     }
 }
