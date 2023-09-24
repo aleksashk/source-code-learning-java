@@ -7,8 +7,8 @@ public class Starter {
     public static void main(String[] args) {
 
         String cardNumber = "2234567896584521";
-        String date = "12/12";
-        String cvv = "569";
+        String date = "12/74";
+        String cvv = "56";
 
         Pattern cardNumberPattern = Pattern.compile("([2-6]([0-9]{3}) ?)(([0-9]{4} ?){3})");
         Pattern datePattern = Pattern.compile("(0[1-9]|1[0-2])/([0-9]{2})");
