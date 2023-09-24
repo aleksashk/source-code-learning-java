@@ -5,23 +5,21 @@ import java.util.regex.Pattern;
 
 public class Starter {
     public static void main(String[] args) {
+        int counter = 0;
+        String ipAddress = "0.0.0.0";
 
-        String cardNumber = "2234567896584521";
-        String date = "12/74";
-        String cvv = "56";
+        Pattern ipv4Pattern = Pattern.compile("^(((\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\\.){3}((\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])))$");
 
-        Pattern cardNumberPattern = Pattern.compile("([2-6]([0-9]{3}) ?)(([0-9]{4} ?){3})");
-        Pattern datePattern = Pattern.compile("(0[1-9]|1[0-2])/([0-9]{2})");
-        Pattern cvvPattern = Pattern.compile("[0-9]{3}");
-        Matcher cardNumberMatcher = cardNumberPattern.matcher(cardNumber);
-        Matcher dateMatcher = datePattern.matcher(date);
-        Matcher cvvMatcher = cvvPattern.matcher(cvv);
-        if (cardNumberMatcher.find() &&
-                dateMatcher.find() &&
-                cvvMatcher.find()) {
-            System.out.println("PhoneNumber '" + cardNumber + " " + date + " " + cvv + "' is correct!");
-        } else {
-            System.out.println("PhoneNumber '" + cardNumber + " " + date + " " + cvv + "' is incorrect!");
+        Matcher matcher = ipv4Pattern.matcher(ipAddress);
+
+        while (matcher.find()) {
+            counter++;
+            System.out.println("Match found '" +
+                    ipAddress.substring(matcher.start(), matcher.end()) +
+                    "'. Starting at index " + matcher.start() +
+                    " and ending at index " + matcher.end());
         }
+
+        System.out.println("Matchers found: " + counter);
     }
 }
