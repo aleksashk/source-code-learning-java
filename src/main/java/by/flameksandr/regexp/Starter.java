@@ -8,7 +8,7 @@ public class Starter {
 
         int counter = 0;
         String string = "196.198.1.197";
-        Pattern pattern = Pattern.compile(".*19");
+        Pattern pattern = Pattern.compile(".*+19");
         Matcher matcher = pattern.matcher(string);
 
         while (matcher.find()) {
