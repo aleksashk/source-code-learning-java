@@ -24,7 +24,7 @@ public class Starter {
     }
 
     private static class SerializableClass implements Serializable {
-        private String title;
+        private transient String title;
         private int size;
 
         public SerializableClass(String title, int size) {
