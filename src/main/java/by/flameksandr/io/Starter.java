@@ -8,22 +8,12 @@ public class Starter {
         String text = "Some text";
         byte[] buffer = text.getBytes();
 
-        FileOutputStream fileOutputStream = null;
-        try {
-            fileOutputStream = new FileOutputStream("file.txt");
+        try (FileOutputStream fileOutputStream = new FileOutputStream("file1.txt")) {
             for (byte eachBufferElement : buffer) {
                 fileOutputStream.write(eachBufferElement);
             }
         } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (fileOutputStream != null) {
-                    fileOutputStream.close();
-                }
-            } catch (IOException e) {
-                System.out.println("Error of closing file.txt");
-            }
+            System.out.println("Input/output error");
         }
     }
 }
