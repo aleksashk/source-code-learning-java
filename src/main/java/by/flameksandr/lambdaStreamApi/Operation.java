@@ -1,5 +1,5 @@
 package by.flameksandr.lambdaStreamApi;
 
-public interface Operation<T> {
-    T getResult(T t1, T t2);
+public interface Operation {
+    int getResult(int t1, int t2);
 }
