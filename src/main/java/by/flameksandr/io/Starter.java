@@ -1,19 +1,18 @@
 package by.flameksandr.io;
 
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Starter {
-    public static void main(String[] args) throws IOException {
-        String text = "Some new text";
-        byte[] bytes = text.getBytes();
+    public static void main(String[] args) {
 
-        try (FileOutputStream stream = new FileOutputStream("text2.txt")) {
-            for (byte eachByte : bytes) {
-                stream.write(eachByte);
+        try (FileInputStream stream = new FileInputStream("text2.txt")) {
+            int symbol;
+            while ((symbol = stream.read()) != -1) {
+                System.out.print((char) symbol);
             }
         } catch (IOException e) {
-            System.out.println("Output error");
+            System.out.println("Input error");
         }
     }
 }
