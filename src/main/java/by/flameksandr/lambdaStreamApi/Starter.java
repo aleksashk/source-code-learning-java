@@ -10,7 +10,7 @@ public class Starter {
         double value2 = 5;
 
         Operation operation = () -> {
-//            value1 = 100;
+            value1 = 100;
             return value1 + value2;
         };
         System.out.println(operation.getResult());
