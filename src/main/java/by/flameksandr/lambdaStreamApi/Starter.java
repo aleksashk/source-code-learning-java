@@ -12,5 +12,8 @@ public class Starter {
 
         System.out.println(operation.getResult(5, 8));
 
+
+        Operation lambda = (value1, value2) -> value1 + value2;
+        System.out.println(lambda.getResult(4, 23));
     }
 }
