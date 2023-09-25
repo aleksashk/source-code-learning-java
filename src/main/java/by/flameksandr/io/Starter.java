@@ -5,15 +5,15 @@ import java.io.IOException;
 
 public class Starter {
     public static void main(String[] args) throws IOException {
-        String text = "Some text";
-        byte[] buffer = text.getBytes();
+        String text = "Some new text";
+        byte[] bytes = text.getBytes();
 
-        try (FileOutputStream fileOutputStream = new FileOutputStream("file1.txt")) {
-            for (byte eachBufferElement : buffer) {
-                fileOutputStream.write(eachBufferElement);
+        try (FileOutputStream stream = new FileOutputStream("text2.txt")) {
+            for (byte eachByte : bytes) {
+                stream.write(eachByte);
             }
         } catch (IOException e) {
-            System.out.println("Input/output error");
+            System.out.println("Output error");
         }
     }
 }
