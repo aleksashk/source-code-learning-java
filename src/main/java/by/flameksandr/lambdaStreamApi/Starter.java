@@ -1,16 +1,15 @@
 package by.flameksandr.lambdaStreamApi;
 
 public class Starter {
+
+    private static double value1 = 3;
+    private static double value2 = 5;
+
     public static void main(String[] args) {
 
-        Factorial factorial = value -> {
-            int result = 1;
-            for (int i = 1; i < value; i++) {
-                result *= i;
-            }
-            return result;
-        };
-
-        System.out.println(factorial.getResult(4));
+        Operation operation = () -> value1 + value2;
+        System.out.println(operation.getResult());
+        System.out.println(value1);
+        System.out.println(value2);
     }
 }
