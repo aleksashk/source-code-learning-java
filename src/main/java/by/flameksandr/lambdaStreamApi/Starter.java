@@ -1,5 +1,6 @@
 package by.flameksandr.lambdaStreamApi;
 
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Starter {
@@ -7,7 +8,7 @@ public class Starter {
 
     public static void main(String[] args) {
 
-        Predicate<Integer> isZero = value -> value == 0;
-        System.out.println(isZero.test(34));
+        Consumer<String> printer = string-> System.out.println(string);
+        printer.accept("Hello world");
     }
 }
