@@ -1,11 +1,19 @@
 package by.flameksandr.streamapi;
 
-import java.util.stream.Stream;
+import java.util.ArrayList;
 
 public class Starter {
     public static void main(String[] args) {
-        Stream<Integer> mixedNumbers = Stream.of(-2, -1, 0, 1, 2);
+        ArrayList<Ticket> tickets = new ArrayList<>();
+        tickets.add(new Ticket("FIrst class", 220));
+        tickets.add(new Ticket("Second class", 180));
+        tickets.add(new Ticket("Third class", 120));
+        tickets.add(new Ticket("Fours class", 20));
 
-        System.out.println(mixedNumbers.count());
+        Ticket minimumTicketPrice = tickets.stream().min(Ticket::compare).get();
+        Ticket maximumTicketPrice = tickets.stream().max(Ticket::compare).get();
+
+        System.out.println("Min price: " + minimumTicketPrice);
+        System.out.println("Max price: " + maximumTicketPrice);
     }
 }
