@@ -1,7 +1,6 @@
 package by.flameksandr.streamapi;
 
 import java.util.Optional;
-import java.util.Random;
 import java.util.stream.Stream;
 
 public class Starter {
@@ -10,6 +9,6 @@ public class Starter {
         Stream<Integer> numbers = Stream.of();
         Optional<Integer> result = numbers.min(Integer::compare);
 
-        System.out.println(result.orElseGet(()->new Random().nextInt(100)));
+        System.out.println(result.orElseThrow(RuntimeException::new));
     }
 }
