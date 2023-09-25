@@ -1,4 +1,4 @@
-package by.flameksandr.lambdaStreamApi;
+package by.flameksandr.lambda;
 
 public interface DataBase {
 
