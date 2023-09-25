@@ -8,6 +8,6 @@ public class Starter {
 
         Stream<Integer> numbers = Stream.of();
         Optional<Integer> result = numbers.min(Integer::compare);
-        System.out.println(result.orElse(0));
+        result.ifPresentOrElse(System.out::println, () -> System.out.println("Stream element not found"));
     }
 }
