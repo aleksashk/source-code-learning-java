@@ -1,9 +1,6 @@
 package by.flameksandr.io;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 
 public class Starter {
 
@@ -11,6 +8,7 @@ public class Starter {
 
     public static void main(String[] args) {
         serialize();
+        deserialize();
     }
 
     private static void serialize() {
@@ -20,7 +18,15 @@ public class Starter {
         } catch (IOException e) {
             System.out.println("Output error");
         }
+    }
 
+    private static void deserialize() {
+        try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(PATH))) {
+            SerializableClass serializableClass = (SerializableClass) stream.readObject();
+            System.out.printf("Title %s%nSize:%d", serializableClass.title, serializableClass.size);
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Input error");
+        }
     }
 
     private static class SerializableClass implements Serializable {
