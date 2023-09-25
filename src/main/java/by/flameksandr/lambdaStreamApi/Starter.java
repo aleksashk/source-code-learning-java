@@ -1,16 +1,17 @@
 package by.flameksandr.lambdaStreamApi;
 
-import java.util.function.BinaryOperator;
-import java.util.function.UnaryOperator;
+import java.util.function.Consumer;
 
 public class Starter {
 
     public static void main(String[] args) {
 
-        UnaryOperator<Double> sqrt = value -> Math.sqrt(value);
-        System.out.println(sqrt.apply(225.));
+        Consumer<String> printer = Starter::println;
+        printer.accept("Hello from java");
 
-        BinaryOperator<Double> pow = (value1, value2) -> Math.pow(value1, value2);
-        System.out.println(pow.apply(23., 2.));
+    }
+
+    private static void println(String text) {
+        System.out.println(text);
     }
 }
