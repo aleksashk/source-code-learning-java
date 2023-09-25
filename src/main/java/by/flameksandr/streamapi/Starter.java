@@ -8,6 +8,6 @@ public class Starter {
 
         Stream<Integer> numbers = Stream.of();
         Optional<Integer> result = numbers.min(Integer::compare);
-        result.ifPresent(System.out::println);
+        System.out.println(result.orElse(0));
     }
 }
