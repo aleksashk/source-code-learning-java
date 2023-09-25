@@ -5,7 +5,8 @@ import java.util.stream.Stream;
 public class Starter {
     public static void main(String[] args) {
 
-        Stream<String> passwords = Stream.of("asdf2342", "s5k3kf", "d7rhb", "xyz");
-        passwords.filter(password -> password.length() >= 5).forEach(System.out::println);
+        Stream<String> stream = Stream.of("val1", "val2", "val3", "val4", "val5");
+//        stream.skip(2).forEach(System.out::println);
+        stream.limit(3).forEach(System.out::println);
     }
 }
