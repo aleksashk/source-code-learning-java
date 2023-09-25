@@ -1,13 +1,14 @@
 package by.flameksandr.streamapi;
 
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Starter {
     public static void main(String[] args) {
 
-        Stream<String> values = Stream.of("val1", "val2", "val3", "val4", "val5");
-        values.collect(Collectors.toCollection(TreeSet::new)).forEach(System.out::println);
+        Stream<Order> orders = Stream.of(new Order(0, "context 1"), new Order(1, "context 2"), new Order(2, "context 3"), new Order(3, "context 4"), new Order(4, "context 5"));
+
+        orders.collect(Collectors.toMap(Order::getId, Order::getContext))
+                .forEach((key, value) -> System.out.printf("Key: %d, Value: %s %n", key, value));
     }
 }
