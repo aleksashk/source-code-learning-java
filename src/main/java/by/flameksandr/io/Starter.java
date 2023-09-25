@@ -1,27 +1,28 @@
 package by.flameksandr.io;
 
-import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Starter {
-    public static void main(String[] args) {
-        File directory = new File("src/backup");
+    public static void main(String[] args) throws IOException {
+        String text = "Some text";
+        byte[] buffer = text.getBytes();
 
-        if (!directory.exists()) {
-            System.out.println(directory.mkdir() ? "Successfully" : "Failed");
-        } else {
-            System.out.println( "Directory: '" + directory.getName() + "' is already exists");
-        }
-
-        String path = "src/main/java/by/flameksandr/io/backup";
-
-        File dir = new File(path);
-        if(dir.isDirectory()){
-            String[] content = dir.list();
-            if(content != null){
-                for (String s: content){
-                    File file = new File(path + "/" + s);
-                    System.out.println(file.isDirectory() ?(s + " is a directory") : (s + " is a file"));
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream("file.txt");
+            for (byte eachBufferElement : buffer) {
+                fileOutputStream.write(eachBufferElement);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fileOutputStream != null) {
+                    fileOutputStream.close();
                 }
+            } catch (IOException e) {
+                System.out.println("Error of closing file.txt");
             }
         }
     }
